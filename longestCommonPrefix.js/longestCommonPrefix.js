@@ -17,6 +17,7 @@
 
 var strs = ['flower', 'flow', 'flight'];
 var strs1 = ['dog', 'racecar', 'car'];
+var strs2 = ['athena', 'athena1', 'athena2'];
 
 var longestCommonPrefix = function(strs) {
 
@@ -32,11 +33,14 @@ var longestCommonPrefix = function(strs) {
         prefix = prefix + character;
     }
 
-    return prefix;
+    return prefix
 };
 
 console.log(longestCommonPrefix(strs));
 // output: "fl"
 
-// console.log(longestCommonPrefix(strs1));
+console.log(longestCommonPrefix(strs1));
 // output: ""
+
+console.log(longestCommonPrefix(strs2));
+// output: "athena"
