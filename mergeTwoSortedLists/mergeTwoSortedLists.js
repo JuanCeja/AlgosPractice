@@ -33,7 +33,27 @@ let list5 = [];
 let list6 = [0];
 
 var mergeTwoLists = function(list1, list2) {
-    
+    let outputArray = [];
+
+    if (list1.length === 0 && list2.length === 0) return null;
+    if(list1.length === 0){
+        outputArray = list2;
+    }
+    if(list2.length === 0){
+        outputArray = list1;
+    }
+
+    for (let i = 0; i < list1.length; i++){
+        if(list1[i] === list2[i]){
+            outputArray.push(list1[i]);
+            outputArray.push(list2[i]);
+        }
+        if(list1[i] < list2[i]){
+            outputArray.push(list1[i]);
+            outputArray.push(list2[i]);
+        }
+    }
+    return outputArray;
 };
 
 console.log(mergeTwoLists(list1, list2));
