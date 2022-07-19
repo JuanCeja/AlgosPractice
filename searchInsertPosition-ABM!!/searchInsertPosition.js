@@ -31,8 +31,6 @@ let target2 = 7;
 
 var searchInsert = function(nums, target) {
     for ( let i = 0; i < nums.length; i++){
-        let pointer = 0;
-
         if(nums[i] === target) return i;
         if(nums[0] > target) return 0;
         if(nums[i] < target && nums[i+1] > target) return i + 1;
