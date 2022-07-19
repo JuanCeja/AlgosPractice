@@ -25,19 +25,19 @@
 
 // =======================================================================================================
 
-let nums = [3,2,2,3]
+let nums = [3,2,2,3] 
+//let nums = [3,2,2,3] => i=0 p=0 [3,2,2,3] =>i=1 p=0  [2,2,2,3] => i=2 p=1 [2,2,2,3] => [2,2,2,3] 
 let val = 3
 
 let nums1 = [0,1,2,2,3,0,4,2]
 let val1 = 2
 
 var removeElement = function(nums, val) {
-    let output = nums.length;
     let pointer1 = 0;
-
-    for(let pointer2 = 0; pointer2 < nums.length; pointer2++){
-        if(nums[pointer2] !== val){
-            nums[pointer1] = nums[pointer2];
+    
+    for(let i = 0; i < nums.length; i++){
+        if(nums[i] !== val){
+            nums[pointer1] = nums[i];
             pointer1++;
         }
     }
@@ -46,7 +46,9 @@ var removeElement = function(nums, val) {
 };
 
 console.log(removeElement(nums, val));
+// Input: nums = [3,2,2,3], val = 3
 // Output: 2, nums = [2,2,_,_]
 
 console.log(removeElement(nums1, val1));
+// Input: nums = [0,1,2,2,3,0,4,2], val = 2
 // Output: 5, nums = [0,1,4,0,3,_,_,_]
