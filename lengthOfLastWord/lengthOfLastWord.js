@@ -22,26 +22,39 @@
 
 // ===================================================================================================================
 
+// let s = "Hello World";
+// let s1 = "   fly me   to   the moon  ";
+// let s2 = "luffy is still joyboy";
+
+// var lengthOfLastWord = function(s) {
+//     let string = s.trim();
+//     let output = "";
+    
+//     if(string.length === 1) return 1;
+//     if(string.includes(" ") === false) return string.length;
+//     for(let i = string.length - 1; i > 0; i--){
+//         console.log(output);
+//         if(string[i] === " "){
+//             break;
+//         }
+//         output = output.concat(string[i]);
+//     }
+//     console.log(`+${output}+`);
+//     return output.length;
+// };
+
+// ===================================REFACTORED CODE================================================
+
 let s = "Hello World";
 let s1 = "   fly me   to   the moon  ";
 let s2 = "luffy is still joyboy";
 
 var lengthOfLastWord = function(s) {
-    let string = s.trim();
-    let output = "";
-    
-    if(string.length === 1) return 1;
-    if(string.includes(" ") === false) return string.length;
-    for(let i = string.length; i > 0; i--){
-        output = output.concat(string[i]);
-        // console.log(output);
-        if(string[i] === " "){
-            break;
-        }
-    }
+    let trimmedString = s.trim().split(" ");
+    return trimmedString[trimmedString.length - 1].length;
+}
 
-    return output.length - 10;
-};
+// ===================================REFACTORED CODE================================================
 
 console.log(lengthOfLastWord(s));
 // Output: 5
