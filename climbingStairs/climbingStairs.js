@@ -24,9 +24,17 @@
 
 let n = 2;
 let n1 = 3;
+let n2 = 4;
 
 var climbStairs = function(n) {
-    
+    let arr = [1,2]
+
+    for(let i = 2; i < n; i++){
+
+        arr[i] = arr[i - 2] + arr[i - 1];
+
+    }
+    return arr[n - 1];
 };
 
 console.log(climbStairs(n));
@@ -34,3 +42,6 @@ console.log(climbStairs(n));
 
 console.log(climbStairs(n1));
 // Output: 3
+
+console.log(climbStairs(n2));
+// Output: 5
