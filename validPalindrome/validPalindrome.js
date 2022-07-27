@@ -26,27 +26,40 @@ let s = "A man, a plan, a canal: Panama";
 let s2 = "race a_car";
 let s3 = " ";
 
+// var isPalindrome = function(s){
+
+//     //removing spaces and special characters and storing string into new variable
+//     let string = s.replace(/[^a-zA-Z0-9]/g, "").replace(/\s+/g, "").toLowerCase();
+
+//     // pointer variable
+//     let pointer = string.length - 1;
+
+//     // basecase for empty string
+//     if(s === "") return true;
+
+//     // loop through string to see if characters match
+//     for(let i = 0; i < string.length / 2; i++){
+//         if(string[i] !== string[pointer]){
+//             return false;
+//         }
+//         pointer--;
+//     }
+
+//     return true;
+// };
+
+// =============================== easier clean solution ============================================
+
 var isPalindrome = function(s){
+    let string = s.replace(/[^a-zA-Z0-9]/g, "");
+    
+    string = string.toLowerCase();
+    
+    return string === string.split('').reverse().join('');
+}
 
-    //removing spaces and special characters and storing string into new variable
-    let string = s.replace(/[^a-zA-Z0-9]/g, "").replace(/\s+/g, "").toLowerCase();
+// =============================== easier clean solution ============================================
 
-    // pointer variable
-    let pointer = string.length - 1;
-
-    // basecase for empty string
-    if(s === "") return true;
-
-    // loop through string to see if characters match
-    for(let i = 0; i < string.length / 2; i++){
-        if(string[i] !== string[pointer]){
-            return false;
-        }
-        pointer--;
-    }
-
-    return true;
-};
 
 console.log(isPalindrome(s));
 // Output: true
