@@ -21,7 +21,18 @@ var t1 = "ahbgdc";
 
 
 var isSubsequence = function(s, t) {
-    
+    let testString = "";
+    let pointer = 0;
+
+    for(let i = 0; i < t.length; i++){
+        if(s[pointer] === t[i]){
+            testString = testString.concat(t[i]);
+            pointer++;
+        }
+    }
+    console.log(testString);
+    console.log(s);
+    return testString === s ? true : false;
 };
 
 console.log(isSubsequence(s,t));
