@@ -21,17 +21,21 @@ var t1 = "ahbgdc";
 
 
 var isSubsequence = function(s, t) {
+    // creating our variables
     let testString = "";
     let pointer = 0;
-
+    
+    //looping through both strings to see if they match 
     for(let i = 0; i < t.length; i++){
+
+        // if match is made push that character to testString variable
         if(s[pointer] === t[i]){
             testString = testString.concat(t[i]);
             pointer++;
         }
     }
-    console.log(testString);
-    console.log(s);
+
+    // return if the result. do the strings equate to each other?
     return testString === s ? true : false;
 };
 
