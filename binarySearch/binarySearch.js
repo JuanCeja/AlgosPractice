@@ -24,7 +24,31 @@ let target1 = 2;
 
 
 var search = function(nums, target) {
-    
+    // setting our variables
+    let lo = 0;
+    let high = nums.length - 1;
+    let mid;
+
+    // using while loop
+    while (lo <= high){
+        // finding the middle of the array for the binary search
+        mid = Math.floor((lo + high) / 2);
+
+        // if the middle is equals to the target return the target
+        if(nums[mid] === target) return mid;
+
+        // if the middle is less than the target then set the middle to the beginning of our search
+        if(nums[mid] < target) {
+            lo = mid + 1;
+
+            // if the middle is higher than the target then set the middle to the end of our array
+        } else {
+            high = mid - 1;
+        }
+    }
+
+    // if we never find our target then just return -1
+    return -1;
 };
 
 console.log(search(nums, target));
