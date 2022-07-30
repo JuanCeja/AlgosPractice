@@ -20,15 +20,29 @@
 
 // ==================================================================================
 
-let prices = [7,1,5,3,6,4]
-let prices2 = [7,6,4,3,1]
+let prices = [7,1,5,3,6,4];
+let prices2 = [7,6,4,3,1];
+let prices3 = [2,4,1];
 
 var maxProfit = function(prices){
-    
+    let minBuyPrice = Infinity;
+    let maxProfit = 0;
+
+    for(let price of prices){
+        if(minBuyPrice > price){
+            minBuyPrice = price;
+        } else if(price - minBuyPrice > maxProfit){
+            maxProfit = price - minBuyPrice;
+        }
+    }
+    return maxProfit;
 }
 
 console.log(maxProfit(prices));
 // Output: 5
 
-console.log(maxProfit(prices));
+console.log(maxProfit(prices2));
 // Output: 0
+
+console.log(maxProfit(prices3));
+// output: 2
