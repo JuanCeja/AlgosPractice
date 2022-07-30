@@ -25,12 +25,18 @@ let prices2 = [7,6,4,3,1];
 let prices3 = [2,4,1];
 
 var maxProfit = function(prices){
+    // variables to keep track 
     let minBuyPrice = Infinity;
     let maxProfit = 0;
 
+// looping through to find lowest price
     for(let price of prices){
+
+        // setting the minBuyPrice if its lower then current price
         if(minBuyPrice > price){
             minBuyPrice = price;
+
+        // setting max profit if the max profit is bigger then prev profit price
         } else if(price - minBuyPrice > maxProfit){
             maxProfit = price - minBuyPrice;
         }
