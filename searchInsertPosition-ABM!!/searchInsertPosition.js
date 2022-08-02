@@ -33,17 +33,25 @@ var searchInsert = function(nums, target) {
     let left = 0
     let right = nums.length;
     
-    while(left < right){
-        let mid = 1 + Math.floor((right - left) / 2);
+    while(left <= right){
+        let mid = Math.floor((left + right) / 2);
 
-        if(mid > target){
-            right = mid;
+        console.log(left)
+        console.log(right)
+        console.log('mid',mid)
+        console.log('target',target)
+        console.log('----------------------')
+
+        if(nums[mid] === target){
+            return mid
+        } else if (nums[mid] < target){
+            left += 1;
         } else {
-            left = mid;
+            right -= 1;
         }
     }
 
-    return left + 1;
+    return left;
 };
 
 console.log(searchInsert(nums, target));
