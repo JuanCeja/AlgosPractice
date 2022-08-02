@@ -34,19 +34,19 @@ var searchInsert = function(nums, target) {
     let right = nums.length;
     
     while(left <= right){
+        
+        // setting mid pointer
         let mid = Math.floor((left + right) / 2);
-
-        console.log(left)
-        console.log(right)
-        console.log('mid',mid)
-        console.log('target',target)
-        console.log('----------------------')
 
         if(nums[mid] === target){
             return mid
-        } else if (nums[mid] < target){
+        } 
+        // start moving our left pointer up
+        else if (nums[mid] < target){
             left += 1;
-        } else {
+        } 
+        // start moving our right pointer down
+        else {
             right -= 1;
         }
     }
