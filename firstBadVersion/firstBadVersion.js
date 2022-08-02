@@ -24,7 +24,7 @@
 let n = 5;
 let n1 = 1;
 
-var solution = function(isBadVersion){
+let solution = function(isBadVersion){
     
     return function(n){
         let left = 1;
