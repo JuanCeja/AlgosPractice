@@ -15,20 +15,35 @@
 
 // ==============================================================================
 
-let nums = [-4,-1,0,3,10];
+let nums = [-4, -1, 0, 3, 10];
 // Output: [0,1,9,16,100]
 
-let nums2 = [-7,-3,2,3,11]
+let nums2 = [-7, -3, 2, 3, 11]
 // Output: [4,9,9,49,121]
 
 
-var sortedSquares = function(nums){
-    let pointer1 = 0;
-    let pointer2;
-
+var sortedSquares = function (nums) {
+    let left = 0;
+    right = nums.length - 1;
+    result = [];
+    position = nums.length - 1;
     
+    while(left <= right){
+        if(nums[left] ** 2 > nums[right] ** 2){
+            result[position] = nums[left] ** 2;
+            position--;
+            left++
+        } else {
+            result[position] = nums[right] ** 2;
+            position--;
+            right--;
+        }
+    }
+    return result;
 }
 
 console.log(sortedSquares(nums));
+// Output: [0,1,9,16,100]
 
 console.log(sortedSquares(nums2));
+// Output: [4,9,9,49,121]
