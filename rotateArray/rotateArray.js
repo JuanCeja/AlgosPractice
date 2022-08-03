@@ -28,9 +28,21 @@ let k2 = 2
 
 
 var rotate = function(nums, k){
+    let resultArray = [];
     
+    for(let i = nums.length - k; i < nums.length; i++){
+        resultArray.push(nums[i]);
+    }
+    
+    for(let j = 0; j < nums.length - k; j++){
+        resultArray.push(nums[j]);
+    }
+    
+    return resultArray;
 }
 
 console.log(rotate(nums, k));
+// Output: [5,6,7,1,2,3,4]
 
 console.log(rotate(nums2, k2));
+// Output: [3,99,-1,-100]
