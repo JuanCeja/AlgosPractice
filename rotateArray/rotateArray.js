@@ -28,17 +28,14 @@ let k2 = 2
 
 
 var rotate = function(nums, k){
-    let resultArray = [];
-    
-    for(let i = nums.length - k; i < nums.length; i++){
-        resultArray.push(nums[i]);
+    k = k % nums.length;
+
+    while(k > 0){
+        nums.unshift(nums.pop());
+        k--;
     }
-    
-    for(let j = 0; j < nums.length - k; j++){
-        resultArray.push(nums[j]);
-    }
-    
-    return resultArray;
+
+    return nums;
 }
 
 console.log(rotate(nums, k));
