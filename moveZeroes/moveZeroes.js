@@ -20,18 +20,24 @@ let nums2 = [0];
 
 
 var moveZeroes = function(nums){
+    // variable that will stay behind and wait to be swapped
     let anchor = 0;
-
+    
+    // just in case we have an array of length 1
     if(nums.length === 1) return nums;
 
+    // lopping through array to find non-zero numbers
     for(let i = 0; i < nums.length; i++){
+
+        // if non-zero numbers are found we swap them with our anchor and move our anchor up
         if(nums[i] !== 0){
-            temp = nums[i];
+            let temp = nums[i];
             nums[i] = nums[anchor];
             nums[anchor] = temp;
             anchor++;
         }
     }
+    // return our sorted array
     return nums;
 }
 
