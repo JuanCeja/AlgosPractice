@@ -18,16 +18,20 @@ let nums = [1, 1, 0, 1, 1, 1];
 let nums2 = [1, 0, 1, 1, 0, 1];
 
 var findMaxConsecutiveOnes = function (nums) {
+    // using variables to keep track of consecutive ones
     let maxCount = 0;
     let currentCounter = 0;
     
+    // loop through the given array
     for (let i = 0; i < nums.length; i++) {
+
+        // if i is equal to 1 increase currentCounter by 1 or reset to 0
         if (nums[i] === 1) {
             currentCounter++;
         } else {
             currentCounter = 0;
         }
-        
+        // if currentCounter is greater than maxCount. set maxCount to currentCounter
         if (currentCounter > maxCount) {
             maxCount = currentCounter;
         }
