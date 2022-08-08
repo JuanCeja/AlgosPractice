@@ -26,16 +26,22 @@ let nums = [12,345,2,6,7896];
 let nums2 = [555,901,482,1771];
 
 var findNumbers = function(nums){
+    // our counter to see how many are even 
     let count = 0;
 
+    // loop through our array 
     for(let i = 0; i < nums.length; i++){
+        
+        //turn our current index item to a string to get its length 
         let length = nums[i].toString().length
         
+        // use modulus to see if its even. if its even increase count by 1
         if(length % 2 === 0){
             count++;
         }
     }
 
+    // return our count
     return count;
 };
 
