@@ -23,11 +23,13 @@ let nums2 = [-7, -3, 2, 3, 11]
 
 
 var sortedSquares = function (nums) {
+    // using variables to have multiple pointers and new array
     let left = 0;
     let right = nums.length - 1;
     let position = nums.length - 1;
     let result = [];
 
+    // using while loop to go through array with pointers
     while (left <= right) {
         if (nums[left] * nums[left] > nums[right] * nums[right]) {
             result[position] = nums[left] * nums[left];
