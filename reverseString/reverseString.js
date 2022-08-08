@@ -13,21 +13,41 @@
 // Output: ["h","a","n","n","a","H"]
 
 // =============================================================================
-let s = ["h","e","l","l","o"];
-let s2 = ["H","a","n","n","a","h"];
+let s = ["h", "e", "l", "l", "o"];
+let s2 = ["H", "a", "n", "n", "a", "h"];
 
-var reverseString = function(s){
-    let pointer = s.length - 1;
+var reverseString = function (s) {
+    let left = 0;
+    let right = s.length - 1;
 
-    for(let i = 0; i < s.length / 2; i++){
-        temp = s[i];
-        s[i] = s[pointer];
-        s[pointer] = temp;
-        pointer--;
+    while(left < right){
+        let temp = s[left];
+        s[left] = s[right];
+        s[right] = temp;
+        left++;
+        right--;
     }
 
     return s;
 }
+
+// ====================== for loop solution ====================================
+
+// var reverseString = function(s){
+//     let pointer = s.length - 1;
+
+//     for(let i = 0; i < s.length / 2; i++){
+//         temp = s[i];
+//         s[i] = s[pointer];
+//         s[pointer] = temp;
+//         pointer--;
+//     }
+
+//     return s;
+// }
+
+// ====================== for loop solution ====================================
+
 
 console.log(reverseString(s));
 // Output: ["o","l","l","e","h"]
