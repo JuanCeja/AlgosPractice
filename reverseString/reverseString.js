@@ -17,7 +17,16 @@ let s = ["h","e","l","l","o"];
 let s2 = ["H","a","n","n","a","h"];
 
 var reverseString = function(s){
-    
+    let pointer = s.length - 1;
+
+    for(let i = 0; i < s.length / 2; i++){
+        temp = s[i];
+        s[i] = s[pointer];
+        s[pointer] = temp;
+        pointer--;
+    }
+
+    return s;
 }
 
 console.log(reverseString(s));
