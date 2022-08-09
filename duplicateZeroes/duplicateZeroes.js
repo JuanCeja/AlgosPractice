@@ -20,20 +20,27 @@ let arr = [1, 0, 2, 3, 0, 4, 5, 0];
 let arr2 = [1, 2, 3];
 
 var duplicateZeroes = function (arr) {
+    // setting variables to use to loop through with while loop
     let i = 0;
     let length = arr.length;
     
+    // using while loop to iterate through
     while(i < arr.length){
+
+        // if character is 0 we add a 0 and also pop from the end. also i++ to skip the next character which will be 0
         if(arr[i] === 0){
             arr.splice(i,0,0);
             i++;
+            arr.pop();
         }
         i++;
     }
 
-    while(arr.length > length){
-        arr.pop();
-    }
+    // instead of using this while loop we just pop from the array in the if statement. same results are given
+    
+    // while(arr.length > length){
+    //     arr.pop();
+    // }
 
     return arr;
 };
