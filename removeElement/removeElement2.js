@@ -25,15 +25,29 @@
 
 // =======================================================================================================
 
-let nums = [3,2,2,3] 
-//let nums = [3,2,2,3] => i=0 p=0 [3,2,2,3] =>i=1 p=0  [2,2,2,3] => i=2 p=1 [2,2,2,3] => [2,2,2,3] 
-let val = 3
+let nums = [3,2,2,3];
+let val = 3;
 
-let nums1 = [0,1,2,2,3,0,4,2]
-let val1 = 2
+let nums1 = [0,1,2,2,3,0,4,2];
+let val1 = 2;
 
 var removeElement = function(nums, val) {
-    
+
+    // create pointer at index 0
+    let pointer1 = 0;
+
+    // iterate over every element in array
+    for(let i = 0; i < nums.length; i++){
+
+        // if element were on isn't the value target we keep going until condition is met. 
+        if(nums[i] !== val){
+            nums[pointer1] = nums[i];
+            pointer1++;
+        }
+    }
+
+    // return the index 
+    return pointer1;
 };
 
 console.log(removeElement(nums, val));
