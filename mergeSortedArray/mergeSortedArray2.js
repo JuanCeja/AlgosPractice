@@ -32,14 +32,25 @@ let m = 3;
 let nums2 = [2,5,6];
 let n = 3;
 
+let nums3 = [6,9,11,0,0,0];
+let m2 = 3;
+let nums4 = [8,10,32];
+let n2 = 3;
+
 var merge = function(nums1, m, nums2, n) {
+    // set our pointers in both arrays
     let pointer1 = m - 1;
     let pointer2 = n - 1;
     
+    // going through array backwards since it is an sorted array
     for(let i = nums1.length - 1; i >= 0; i--){
+
+        // if our second pointer is < 0 everything is already in the first array so we break
         if(pointer2 < 0){
             break;
         }
+
+        // now we compare the elements in pointer 1 and 2
         if(nums1[pointer1] >= nums2[pointer2]){
             nums1[i] = nums1[pointer1];
             pointer1--;
@@ -48,8 +59,12 @@ var merge = function(nums1, m, nums2, n) {
             pointer2--;
         }
     }
+    // we return our new array
     return nums1;
 };
 
 console.log(merge(nums1, m, nums2, n));
+// Output: [1,2,2,3,5,6]
+
+console.log(merge(nums3, m2, nums4, n2));
 // Output: [1,2,2,3,5,6]
