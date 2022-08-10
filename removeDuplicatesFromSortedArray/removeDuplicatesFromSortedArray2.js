@@ -26,16 +26,21 @@ let nums = [1,1,2];
 let nums1 = [0,0,1,1,1,2,2,3,3,4]
 
 var removeDuplicates = function(nums) {
-    if(nums.length === 0) return 0;
-    var pointer1 = 0;
-    
+    // set pointer to reference another element
+    let pointer = 0;
+
+    // use for loop to iterate through nums array
     for(let i = 1; i < nums.length; i++){
-        if(nums[pointer1] !== nums[i]){
-            pointer1++;
-            nums[pointer1] = nums[i];
+
+        // if i does not match with pointer move the pointer up and replace with i
+        if(nums[pointer] !== nums[i]){
+            pointer++;
+            nums[pointer] = nums[i];
         }
     }
-    return pointer1 + 1;
+    console.log(nums)
+    // return pointer to get unique values. add 1 because pointer will be an index number
+    return pointer + 1;
 };
 
 console.log(removeDuplicates(nums));
