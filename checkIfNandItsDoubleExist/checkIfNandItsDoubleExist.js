@@ -31,18 +31,23 @@ let arr4 = [4, -7, 11, 4, 18];
 
 
 var checkIfExist = function (arr) {
+    // using a set to check if half or double values exist
     let set = new Set();
 
     for (let i = 0; i < arr.length; i++) {
+        // using half and double variables to check
         let half = arr[i] / 2;
         let double = arr[i] * 2;
 
+        // checking to see if they already exist
         if(set.has(half) || set.has(double)){
             return true;
         }
 
+        // if they did not exist we add the array value to the set and proceed
         set.add(arr[i])
     };
+    // we never hit true in for loop so we return false
     return false;
 };
 
