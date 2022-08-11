@@ -27,24 +27,22 @@ let arr = [17, 18, 5, 4, 6, 1];
 let arr2 = [400];
 
 var replaceElements = function (arr) {
-    let pointer = 0;
 
-    while (pointer < arr.length) {
+    // create the variable to give our last element a value of -1
+    let rightMax = -1;
+    
+    // using for loop backwards to come from the end and set values
+    for(let i = arr.length - 1; i >= 0; i--){
 
-        let max = 0;
+        // comparing the values to see which is greater
+        newMax = Math.max(arr[i], rightMax);
 
-        for (let i = pointer + 1; i < arr.length; i++) {
+        // setting our current index element to our previous max
+        arr[i] = rightMax;
 
-            if (arr[i] > max) {
-                max = arr[i];
-            }
-
-            arr[pointer] = max;
-
-        }
-        pointer++;
+        // setting our new max to set our next index element
+        rightMax = newMax;
     }
-    arr[arr.length - 1] = -1;
     return arr;
 };
 
@@ -53,3 +51,26 @@ console.log(replaceElements(arr));
 
 console.log(replaceElements(arr2));
 // Output: [-1]
+
+
+// ======================== original solution (slower) ====================================
+
+// let pointer = 0;
+
+// while (pointer < arr.length) {
+    
+    //     let max = 0;
+    
+    //     for (let i = pointer + 1; i < arr.length; i++) {
+        //         if (arr[i] > max) {
+            //             max = arr[i];
+            //         }
+            //         arr[pointer] = max;
+            //     }
+            //     pointer++;
+            // }
+            // arr[arr.length - 1] = -1;
+            // return arr;
+            
+            
+// ======================== original solution (slower) ====================================
