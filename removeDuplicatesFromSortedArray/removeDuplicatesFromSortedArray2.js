@@ -22,18 +22,18 @@
 
 // ========================================================================================================================
 
-let nums = [1,1,2];
-let nums1 = [0,0,1,1,1,2,2,3,3,4]
+let nums = [1, 1, 2];
+let nums1 = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
 
-var removeDuplicates = function(nums) {
+var removeDuplicates = function (nums) {
     // set pointer to reference another element
     let pointer = 0;
 
     // use for loop to iterate through nums array
-    for(let i = 1; i < nums.length; i++){
+    for (let i = 1; i < nums.length; i++) {
 
         // if i does not match with pointer move the pointer up and replace with i
-        if(nums[pointer] !== nums[i]){
+        if (nums[pointer] !== nums[i]) {
             pointer++;
             nums[pointer] = nums[i];
         }
