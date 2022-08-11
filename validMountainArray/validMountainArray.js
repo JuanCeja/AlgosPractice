@@ -25,6 +25,7 @@ var validMountainArray = function(arr) {
 
     // array needs to be at least 3 in length. needs start,mid,end points
     if(arr.length < 3) return false; 
+    
     // start of valley cannot be larger than second value. mountain needs to start from bottom
     if(arr[0] > arr[1]) return false;
 
