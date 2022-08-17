@@ -37,7 +37,7 @@ let heights = [1,1,4,2,1,3]
 let heights2 = [5,1,2,3,4]
 let heights3 = [1,2,3,4,5]
 
-var checkHeights = function(heights){
+var heightChecker = function(heights){
     
     let orderedHeights = [...heights];
     let counter = 0;
@@ -53,11 +53,11 @@ var checkHeights = function(heights){
     return counter;
 }
 
-console.log(checkHeights(heights));
+console.log(heightChecker(heights));
 // Output: 3
 
-console.log(checkHeights(heights2));
+console.log(heightChecker(heights2));
 // Output: 5
 
-console.log(checkHeights(heights3));
+console.log(heightChecker(heights3));
 // Output: 0
