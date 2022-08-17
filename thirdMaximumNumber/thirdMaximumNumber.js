@@ -30,12 +30,38 @@
 
 // ========================================================================================
 
-let nums = [3,2,1]
-let nums2 = [1,2]
-let nums3 = [2,2,3,1]
+let nums = [3, 2, 1]
+let nums2 = [1, 2]
+let nums3 = [2, 2, 3, 1]
 
 
-var thirdMax = function(nums) {
+var thirdMax = function (nums) {
+    let max = nums[0];
+    let secondMax = -Infinity;
+    let thirdMax = -Infinity;
 
+    for (let i = 0; i < nums.length; i++) {
+        let num = nums[i];
+
+        if (num > max) {
+            thirdMax = secondMax;
+            secondMax = max;
+            max = num;
+        } else if (num > secondMax && num < max) {
+            thirdMax = secondMax;
+            secondMax = num;
+        } else if (num > thirdMax && num < secondMax) {
+            thirdMax = num;
+        }
+    }
+    return thirdMax === -Infinity ? max : thirdMax;
 };
 
+console.log(thirdMax(nums));
+// Output: 1
+
+console.log(thirdMax(nums2));
+// Output: 2
+
+console.log(thirdMax(nums3));
+// Output: 1
