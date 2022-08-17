@@ -33,23 +33,35 @@
 let nums = [3, 2, 1]
 let nums2 = [1, 2]
 let nums3 = [2, 2, 3, 1]
+let nums4 = [1, 11, -4, 0, 1, 5]
+
 
 
 var thirdMax = function (nums) {
+    // setting our variables
     let max = nums[0];
     let secondMax = -Infinity;
     let thirdMax = -Infinity;
 
+    // using for loop to iterate
     for (let i = 0; i < nums.length; i++) {
+
+        // setting our current value to num variable to shorten code
         let num = nums[i];
 
+        // if current value is greater than max make new max and bump all maxs down a level
         if (num > max) {
             thirdMax = secondMax;
             secondMax = max;
             max = num;
+
+
+            // if current value is > second max bump maxs down a level also check if it is less than max so we dont make duplicates
         } else if (num > secondMax && num < max) {
             thirdMax = secondMax;
             secondMax = num;
+            
+            // if current value is > third max bump maxs down a level also check if it is less than second max so we dont make duplicates
         } else if (num > thirdMax && num < secondMax) {
             thirdMax = num;
         }
@@ -64,4 +76,7 @@ console.log(thirdMax(nums2));
 // Output: 2
 
 console.log(thirdMax(nums3));
+// Output: 1
+
+console.log(thirdMax(nums4));
 // Output: 1
