@@ -38,11 +38,26 @@ let heights2 = [5,1,2,3,4]
 let heights3 = [1,2,3,4,5]
 
 var checkHeights = function(heights){
-
+    
+    let orderedHeights = [...heights];
+    let counter = 0;
+    
+    orderedHeights.sort((a,b) => a - b);
+    
+    for(let i = 0; i < heights.length; i++){
+        if(heights[i] !== orderedHeights[i]){
+            counter++;
+        }
+    }
+    
+    return counter;
 }
 
 console.log(checkHeights(heights));
+// Output: 3
 
 console.log(checkHeights(heights2));
+// Output: 5
 
 console.log(checkHeights(heights3));
+// Output: 0
