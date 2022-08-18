@@ -17,16 +17,23 @@ let nums = [4,3,2,7,8,2,3,1];
 let nums2 = [1,1];
 
 var findDisappearedNumbers = function(nums) {
+    // this will be our array were we will push our missing numbers to return
     let missingNumbers = [];
 
+    // iterate through array. 
     for(let i = 0; i < nums.length; i++){
+
+        // finding the index of the current indexes value and marking it as a negative value so we can later find missing values that aren't marked negative
         let j = Math.abs(nums[i]) - 1;
         nums[j] = Math.abs(nums[j]) * -1;
     }
 
+    // iterate through our modified array. values that are not marked negative are values that are missing. so we add 1 and then push to our array. we add one because the need the value and not the index. 
     for(let i = 0; i < nums.length; i++){
         if(nums[i] > 0) missingNumbers.push(i + 1);
     }
+
+    // return our array of missing numbers
     return missingNumbers;
 }
 
