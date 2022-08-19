@@ -24,19 +24,19 @@ let nums2 = [-7, -3, 2, 3, 11]
 
 var sortedSquares = function (nums) {
     let left = 0;
-    right = nums.length - 1;
-    result = [];
-    position = nums.length - 1;
-    
-    while(left <= right){
-        if(nums[left] ** 2 > nums[right] ** 2){
+    let right = nums.length - 1;
+    let position = nums.length - 1;
+    let result = [];
+
+    while (left <= right) {
+        if (nums[left] ** 2 > nums[right] ** 2) {
             result[position] = nums[left] ** 2;
+            left++;
             position--;
-            left++
         } else {
             result[position] = nums[right] ** 2;
-            position--;
             right--;
+            position--;
         }
     }
     return result;
