@@ -21,25 +21,14 @@ let nums = [-4, -1, 0, 3, 10];
 let nums2 = [-7, -3, 2, 3, 11]
 // Output: [4,9,9,49,121]
 
+// vvvvvvvvvvvvvvvvvvvvvvv solution 2 vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
 var sortedSquares = function (nums) {
-    let left = 0;
-    let right = nums.length - 1;
-    let position = nums.length - 1;
-    let result = [];
-
-    while (left <= right) {
-        if (nums[left] ** 2 > nums[right] ** 2) {
-            result[position] = nums[left] ** 2;
-            left++;
-            position--;
-        } else {
-            result[position] = nums[right] ** 2;
-            right--;
-            position--;
-        }
+    for(let i = 0; i < nums.length; i++){
+        nums[i] = nums[i] ** 2;
     }
-    return result;
+    
+    return nums.sort((a, b) => a - b);
 }
 
 console.log(sortedSquares(nums));
@@ -47,3 +36,29 @@ console.log(sortedSquares(nums));
 
 console.log(sortedSquares(nums2));
 // Output: [4,9,9,49,121]
+
+// ^^^^^^^^^^^^^^^^^^^^^^^^ solution 2 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+// vvvvvvvvvvvvvvvvvvvvvvv solution 1 vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+// var sortedSquares = function (nums) {
+    //     let left = 0;
+    //     let right = nums.length - 1;
+    //     let position = nums.length - 1;
+    //     let result = [];
+    
+    //     while (left <= right) {
+        //         if (nums[left] ** 2 > nums[right] ** 2) {
+            //             result[position] = nums[left] ** 2;
+            //             left++;
+            //             position--;
+            //         } else {
+                //             result[position] = nums[right] ** 2;
+                //             right--;
+                //             position--;
+                //         }
+                //     }
+                //     return result;
+                // }
+                
+// ^^^^^^^^^^^^^^^^^^^^^^^^ solution 1 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
